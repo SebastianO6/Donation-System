@@ -75,36 +75,7 @@ function LandingPage({ navigateTo }) {
         </div>
       </section>
 
-      {/* 3. Featured Campaigns Section */}
-      <section className='featured-section'>
-        <h2>See the Impact in Action</h2>
-        <p>Discover campaigns that are making a difference right now.</p>
-        <div className='campaigns-grid'>
-          {featuredCampaigns.map((campaign) => (
-            <div key={campaign.id} className='campaign-card' onClick={() => navigateTo('userPayment')}>
-              <img src={campaign.image} alt={campaign.title} className='card-image' />
-              <div className='card-content'>
-                <h3 className='card-title'>{campaign.title}</h3>
-                <p className='card-org'>{campaign.organization}</p>
-                <div className='progress-bar-container'>
-                  <div 
-                    className='progress-bar' 
-                    style={{ width: `${(campaign.raised / campaign.goal) * 100}%` }}
-                  ></div>
-                </div>
-                <p className='card-funding-status'>
-                  <strong>${campaign.raised.toLocaleString()} raised</strong> 
-                  <span className='card-goal'> of ${campaign.goal.toLocaleString()}</span>
-                </p>
-                <span className='card-link'>Learn More & Donate →</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Final CTA Section */}
-      <section className='cta-section'>
+       <section className='cta-section'>
         <h2>Ready to Make a Difference?</h2>
         <p>Whether you have an idea that needs support or you want to help a cause you believe in, your journey starts here.</p>
         <div className='cta-buttons'>
@@ -117,7 +88,6 @@ function LandingPage({ navigateTo }) {
         </div>
       </section>
 
-      {/* 5. Footer */}
       <footer className='page-footer'>
         <p>© {new Date().getFullYear()} Harambee Platform. All Rights Reserved.</p>
       </footer>
