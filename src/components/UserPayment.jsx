@@ -65,6 +65,7 @@ function UserPayment({ navigateTo }) {
                   value={formData.phone} 
                   onChange={handleChange} 
                   placeholder='(+254) 720 501 759'
+                  required
                 />
               </div>
 
