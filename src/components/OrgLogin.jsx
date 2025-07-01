@@ -46,7 +46,7 @@ function OrgLogin({navigateTo , setOrgName}) {
           />
         </div>
         <button type='submit' onClick={handleSubmit}>Login</button>
-        <p><span onClick={() => navigateTo('orgRegister')}>Dont have an account? </span></p>
+        <p><span onClick={() => navigateTo('orgRegistration')}>Dont have an account? </span></p>
         <button type='button' onClick={() => navigateTo('landing')}>Back</button> 
       </form>
     </div>
