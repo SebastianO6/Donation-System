@@ -25,7 +25,22 @@ body {
   margin-top: 40px;
 }
 
-.option-card {
+.option-card-1 {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%; 
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-card-1:hover {
+  background-color: #81bff1;
+  transform: translateY(-5px);
+}
+
+.option-card-2 {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -35,8 +50,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.option-card:hover {
-  background-color: #f0f0f0;
+.option-card-2:hover {
+  background-color: #9aff86;
   transform: translateY(-5px);
 }
 

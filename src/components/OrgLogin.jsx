@@ -16,7 +16,9 @@ function OrgLogin({navigateTo , setOrgName}) {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    setOrgName('Matter Heart Run')
+    if (typeof setOrgName === 'function') {
+      setOrgName('Matter Heart Run'); 
+    }
     navigateTo('dashboard')
 
   }
@@ -45,7 +47,7 @@ function OrgLogin({navigateTo , setOrgName}) {
           required
           />
         </div>
-        <button type='submit' onClick={handleSubmit}>Login</button>
+        <button type='submit'>Login</button>
         <p><span onClick={() => navigateTo('orgRegistration')}>Dont have an account? </span></p>
         <button type='button' onClick={() => navigateTo('landing')}>Back</button> 
       </form>
