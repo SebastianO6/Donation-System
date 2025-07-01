@@ -1,40 +1,11 @@
 import React from 'react';
 
-// You can create a new CSS file for this component or add the CSS below to your existing one.
-// import './LandingPage.css'; 
 
 function LandingPage({ navigateTo }) {
-  // Data for the featured campaigns. In a real app, this would come from an API.
-  const featuredCampaigns = [
-    {
-      id: 1,
-      title: 'Build the Greenfield Community Garden',
-      organization: 'by Greenfield Neighborhood Org.',
-      image: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600',
-      raised: 7500,
-      goal: 10000,
-    },
-    {
-      id: 2,
-      title: 'New Books for the Westside Library',
-      organization: 'by Friends of the Library',
-      image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600',
-      raised: 4750,
-      goal: 5000,
-    },
-    {
-      id: 3,
-      title: 'Uniforms for the Youth Soccer Team',
-      organization: 'by Riverside Youth Sports',
-      image: 'https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600',
-      raised: 1200,
-      goal: 3000,
-    },
-  ];
+
 
   return (
     <div className='new-landing-page'>
-      {/* 1. Hero Section */}
       <header className='hero-section'>
         <div className='hero-overlay'></div>
         <div className='hero-content'>
@@ -53,7 +24,6 @@ function LandingPage({ navigateTo }) {
         </div>
       </header>
 
-      {/* 2. Info Section */}
       <section className='info-section'>
         <h2>What is a Harambee?</h2>
         <p className='info-intro'>
