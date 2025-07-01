@@ -101,7 +101,7 @@ function UserPayment({ navigateTo }) {
             
             <form onSubmit={handleSubmit}>
               <div className='form-group search-container'>
-                <label htmlFor='orgSearch'>Search for an Organization</label>
+                <label htmlFor='orgSearch'>Chagua shirika</label>
                 <input 
                   type='text' 
                   id='orgSearch'
@@ -124,7 +124,7 @@ function UserPayment({ navigateTo }) {
 
               <fieldset disabled={isFormDisabled}>
                 <div className='form-group'>
-                  <label htmlFor='fullName'>Your Full Name</label>
+                  <label htmlFor='fullName'>Full Name</label>
                   <input 
                     type='text' 
                     id='fullName'
@@ -204,7 +204,7 @@ function UserPayment({ navigateTo }) {
               </>
             ) : (
               <div className='summary-placeholder'>
-                <p>Please select an organization to see the campaign details.</p>
+                <p>Tafadhali chagua shirika ili uone maelezo zaidi</p>
               </div>
             )}
           </div>
