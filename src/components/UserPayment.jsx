@@ -96,12 +96,12 @@ function UserPayment({ navigateTo }) {
       <div className='form-card donation-page-card'>
         <div className='donation-form-layout'>
           <div className='form-section'>
-            <h2>Tusaidie Kuinua Maisha</h2>
-            <p className='form-subheading'>Shukrani kwa msaada wako.</p>
+            <h2>Support a Cause with Harambee</h2>
+            <p className='form-subheading'>Be Part of Something Bigger - Support a Harambee"</p>
             
             <form onSubmit={handleSubmit}>
               <div className='form-group search-container'>
-                <label htmlFor='orgSearch'>Chagua shirika</label>
+                <label htmlFor='orgSearch'>Which Harambee Speaks to Your Heart?</label>
                 <input 
                   type='text' 
                   id='orgSearch'
@@ -124,7 +124,7 @@ function UserPayment({ navigateTo }) {
 
               <fieldset disabled={isFormDisabled}>
                 <div className='form-group'>
-                  <label htmlFor='fullName'>Full Name</label>
+                  <label htmlFor='fullName'>Your Full Name</label>
                   <input 
                     type='text' 
                     id='fullName'
@@ -204,7 +204,7 @@ function UserPayment({ navigateTo }) {
               </>
             ) : (
               <div className='summary-placeholder'>
-                <p>Tafadhali chagua shirika ili uone maelezo zaidi</p>
+                <p>Select a Harambee to contribute to</p>
               </div>
             )}
           </div>
