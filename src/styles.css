@@ -282,12 +282,6 @@ th {
   background-color: #f2f2f2;
 }
 
-span {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .form-page-container {
   display: flex;
   justify-content: center;
@@ -574,20 +568,23 @@ span {
   margin-bottom: 10px;
 }
 
+
 .amount-preset-btn {
   flex-grow: 1;
   padding: 12px;
   border: 1px solid #ccc;
-  background-color: #f8f9fa;
+  background-color: white;
+  color: #333;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  margin: 0;
 }
 
 .amount-preset-btn:hover {
-  background-color: #e9ecef;
+  background-color: #f0f0f0;
   border-color: #999;
 }
 
@@ -595,6 +592,61 @@ span {
   background-color: #E67E22;
   color: white;
   border-color: #E67E22;
+}
+
+.search-container {
+  position: relative; 
+}
+
+.search-results {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.search-results li {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-results li:hover {
+  background-color: #f5f5f5;
+}
+
+.summary-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+fieldset[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+span {
+    text-decoration: none;
+    cursor: default;
 }
 
 .custom-amount-wrapper {
@@ -612,7 +664,7 @@ span {
 }
 
 .custom-amount-wrapper input {
-  padding-left: 30px; 
+  padding-left: 45px; 
 }
 
 .card-element-placeholder {
