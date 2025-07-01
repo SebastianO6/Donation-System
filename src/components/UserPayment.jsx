@@ -96,8 +96,8 @@ function UserPayment({ navigateTo }) {
       <div className='form-card donation-page-card'>
         <div className='donation-form-layout'>
           <div className='form-section'>
-            <h2>Support a Cause</h2>
-            <p className='form-subheading'>Your contribution makes an Impact. Asante Sana!</p>
+            <h2>Tusaidie Kuinua Maisha</h2>
+            <p className='form-subheading'>Shukrani kwa msaada wako.</p>
             
             <form onSubmit={handleSubmit}>
               <div className='form-group search-container'>
