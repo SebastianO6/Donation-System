@@ -57,14 +57,14 @@ function UserPayment({ navigateTo }) {
               </div>
 
               <div className='form-group'>
-                <label htmlFor='phone'>Phone Number (Optional)</label>
+                <label htmlFor='phone'>Mpesa Phone Number</label>
                 <input 
                   type='tel' 
                   id='phone'
                   name='phone' 
                   value={formData.phone} 
                   onChange={handleChange} 
-                  placeholder='(555) 123-4567'
+                  placeholder='(+254) 720 501 759'
                 />
               </div>
 
@@ -93,14 +93,6 @@ function UserPayment({ navigateTo }) {
                     required 
                     min="1"
                   />
-                </div>
-              </div>
-
-              <div className='payment-details-section'>
-                <label>Payment Details</label>
-                <div className='card-element-placeholder'>
-                  <span>Card Number</span>
-                  <span>MM / YY CVC</span>
                 </div>
               </div>
 

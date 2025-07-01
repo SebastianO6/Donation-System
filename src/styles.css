@@ -615,9 +615,6 @@ span {
   padding-left: 30px; 
 }
 
-.payment-details-section {
-  margin-top: 20px;
-}
 .card-element-placeholder {
   display: flex;
   justify-content: space-between;
