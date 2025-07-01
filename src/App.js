@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import LandingPage from './components/LandingPage'
+import UserPayment from './components/UserPayment'
+import OrgRegistration from './components/OrgRegistration'
+import OrgLogin from './components/OrgLogin'
+import Dashboard from './components/Dashboard'
+
+
 
 function App() {
+  const [currentPage, setCurrentPage ] = useState('landing')
+  const [orgName, setOrgName ] = useState('')
+
+  const navigateTo = (page) => {
+    setCurrentPage(page)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      {currentPage === 'landing' && <LandingPage navigateTo = {navigateTo} />}
+      {currentPage === 'userPayment' && <UserPayment navigateTo = {navigateTo}/>}
+      {currentPage === 'orgRegistration' && <OrgRegistration navigateTo = {navigateTo}/>}
+      {currentPage === 'orgLogin' && <OrgLogin navigateTo = {navigateTo}/>}
+      {currentPage === 'dashboard' && <Dashboard navigateTo = {navigateTo}/>}
     </div>
   );
-}
+ }
 
 export default App;
