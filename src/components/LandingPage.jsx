@@ -1,12 +1,20 @@
 import React from 'react';
-
+import './LandingPage.css'; // Make sure to create and import this CSS file
 
 function LandingPage({ navigateTo }) {
-
-
   return (
     <div className='new-landing-page'>
       <header className='hero-section'>
+        {/* The Admin Login button is now inside the hero section */}
+        <div className="admin-access">
+          <button 
+            className="admin-login-btn" 
+            onClick={() => navigateTo('adminLogin')}
+          >
+            Admin Login
+          </button>
+        </div>
+
         <div className='hero-overlay'></div>
         <div className='hero-content'>
           <h1>Unite for Change. Ignite Your Community.</h1>
@@ -45,7 +53,7 @@ function LandingPage({ navigateTo }) {
         </div>
       </section>
 
-       <section className='cta-section'>
+      <section className='cta-section'>
         <h2>Ready to Make a Difference?</h2>
         <p>Whether you have an idea that needs support or you want to help a cause you believe in, your journey starts here.</p>
         <div className='cta-buttons'>

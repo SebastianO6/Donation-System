@@ -5,10 +5,13 @@ import UserPayment from './components/UserPayment';
 import OrgRegistration from './components/OrgRegistration';
 import OrgLogin from './components/OrgLogin';
 import Dashboard from './components/Dashboard';
+import AdminLogin from './components/admin/AdminLogin';
+import AdminDashboard from './components/admin/AdminDashboard'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('landing');
   const [orgName, setOrgName] = useState('');
+  const [adminLoggedIn, setAdminLoggedIn] = useState('')
 
   const navigateTo = (page) => {
     setCurrentPage(page);
@@ -31,6 +34,8 @@ function App() {
           orgName={orgName}  
         />
       )}
+      {currentPage === 'adminLogin' && <AdminLogin navigateTo = {navigateTo} setAdminLoggedIn = {setAdminLoggedIn} />}
+      {currentPage === 'adminDashboard' && <AdminDashboard navigateTo = {navigateTo} /> }
     </div>
   );
 }
