@@ -26,8 +26,8 @@ function OrgRegistration({ navigateTo }) {
   return (
     <div className='form-page-container'>
       <div className='form-card'>
-        <h2>Create Your Organization's Account</h2>
-        <p className='form-subheading'>Join our community of changemakers. Let's get started!</p>
+        <h3>Start an Harambee</h3>
+        <p className='form-subheading'>Register Your Harambee below</p>
         
         <form onSubmit={handleSubmit}>
           <div className='form-group'>
