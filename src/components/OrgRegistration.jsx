@@ -5,7 +5,14 @@ function OrgRegistration({ navigateTo }) {
     orgName: '',
     email: '',
     password: '',
-    category: ''
+    category: '',
+    paybillNumber: '',
+    accountNumber: '',
+    orgPhoto: null,
+    city: '',
+    targetAmount: '',
+    duration: 15,
+    referallCode: ''
   });
 
   const handleChange = (e) => {
@@ -15,6 +22,13 @@ function OrgRegistration({ navigateTo }) {
       [name]: value
     }));
   };
+
+  const handleFileChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      orgPhoto: e.target.files[0]
+    }))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,6 +91,85 @@ function OrgRegistration({ navigateTo }) {
               placeholder='e.g., Community, Education, Sports'
               required 
             />
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='orgPhoto'>Organization Photo</label>
+            <input 
+              type='file' 
+              id='orgPhoto' 
+              name='orgPhoto' 
+              onChange={handleFileChange} 
+              accept='image/*' 
+            />
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='paybillNumber'>Mpesa Pabill Number</label>
+            <input 
+              type='number' 
+              id='paybillNumber' 
+              name='paybillNumber' 
+              value={formData.paybillNumber}
+              onChange={handleChange}
+              placeholder='eg. 1234' 
+              required
+            /> 
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='accountNumber'>Account number</label>
+            <input 
+              type='text' 
+              id='accountNumber' 
+              name='accountNumber' 
+              value={formData.accountNumber} 
+              onChange={handleChange}
+              placeholder='eg., 1234' 
+              required
+            /> 
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='city'>city</label>
+            <input 
+              type='text' 
+              id='city' 
+              name='city' 
+              value={formData.city} 
+              onChange={handleChange}
+              placeholder='eg .,Nairobi' 
+              required
+            /> 
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='targetAmount'>Target Amount (KSH)</label>
+            <input 
+              type='number' 
+              id='targetAmount' 
+              name='targetAmount' 
+              value={formData.targetAmount}
+              onChange={handleChange}
+              placeholder='eg., 200000' 
+              required
+            /> 
+          </div>
+           
+          <div className='form-group'>
+            <label htmlFor='duration'>Duration (days)</label>
+            <select 
+              name="duration" 
+              id="duration" 
+              value={formData.duration} 
+              onChange={handleChange} 
+              required
+              >
+              <option value="15">15 days</option>
+              <option value="30">30 days</option>
+              <option value="60">60 days</option>
+              <option value="100">100 days</option>
+            </select>  
           </div>
 
           <button type='submit' className='btn btn-primary btn-full-width'>
