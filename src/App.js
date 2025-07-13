@@ -7,6 +7,8 @@ import OrgLogin from './components/OrgLogin';
 import Dashboard from './components/Dashboard';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminDashboard from './components/admin/AdminDashboard'
+import UserRegsitration from './components/UserRegistration';
+import HarambeeTypeSelection from './components/HarambeeSelection';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('landing');
@@ -36,6 +38,8 @@ function App() {
       )}
       {currentPage === 'adminLogin' && <AdminLogin navigateTo = {navigateTo} setAdminLoggedIn = {setAdminLoggedIn} />}
       {currentPage === 'adminDashboard' && <AdminDashboard navigateTo = {navigateTo} /> }
+      {currentPage === 'harambeeTypeSelection' && <HarambeeTypeSelection navigateTo={navigateTo} /> }
+      {currentPage === 'userRegistration' && <UserRegsitration navigateTo={navigateTo} /> }
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import React from 'react';
-import './LandingPage.css'; // Make sure to create and import this CSS file
+import './LandingPage.css';
 
 function LandingPage({ navigateTo }) {
   return (
     <div className='new-landing-page'>
       <header className='hero-section'>
-        {/* The Admin Login button is now inside the hero section */}
         <div className="admin-access">
           <button 
             className="admin-login-btn" 
@@ -22,7 +21,7 @@ function LandingPage({ navigateTo }) {
             "Harambee" means to pull together. We provide the platform for you to launch or support projects that make a real, collective impact.
           </p>
           <div className='hero-buttons'>
-            <button className='btn btn-primary' onClick={() => navigateTo('orgRegistration')}>
+            <button className='btn btn-primary' onClick={() => navigateTo('harambeeTypeSelection')}>
               Start a Harambee
             </button>
             <button className='btn btn-secondary' onClick={() => navigateTo('userPayment')}>
@@ -57,7 +56,7 @@ function LandingPage({ navigateTo }) {
         <h2>Ready to Make a Difference?</h2>
         <p>Whether you have an idea that needs support or you want to help a cause you believe in, your journey starts here.</p>
         <div className='cta-buttons'>
-            <button className='btn btn-primary' onClick={() => navigateTo('orgRegistration')}>
+            <button className='btn btn-primary' onClick={() => navigateTo('harambeeTypeSelection')}>
               Start a Harambee
             </button>
             <button className='btn btn-dark' onClick={() => navigateTo('userPayment')}>

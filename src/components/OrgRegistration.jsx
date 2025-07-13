@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-function OrgRegistration({ navigateTo }) {
+function UserRegistration({ navigateTo }) {
   const [formData, setFormData] = useState({
-    orgName: '',
+    donationTitle: '',
     email: '',
     password: '',
-    category: '',
-    paybillNumber: '',
+    idPhoto: null,
+    payBill: '',
     accountNumber: '',
-    orgPhoto: null,
+    profilePic: null,
     city: '',
     targetAmount: '',
-    duration: 15,
-    referallCode: ''
+    duration: 15, 
   });
 
   const handleChange = (e) => {
@@ -24,154 +23,156 @@ function OrgRegistration({ navigateTo }) {
   };
 
   const handleFileChange = (e) => {
+    const { name, files } = e.target;
     setFormData(prev => ({
       ...prev,
-      orgPhoto: e.target.files[0]
-    }))
-  }
-
+      [name]: files[0]
+    }));
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Registering organization:', formData);
-    alert('Organization registered successfully!');
-    navigateTo('dashboard'); 
+    console.log("Form data submitted", formData);
+    alert('User registered successfully!');
+    navigateTo('dashboard');
   };
 
   return (
     <div className='form-page-container'>
-      <div className='form-card'>
-        <h3>Start an Harambee</h3>
-        <p className='form-subheading'>Register Your Harambee below</p>
-        
+      <div className="form-card">
+        <h3>Start a Harambee</h3>
+        <p className="form-subheading">Register Harambee below</p>
+
         <form onSubmit={handleSubmit}>
-          <div className='form-group'>
-            <label htmlFor='orgName'>Organization Name</label>
+          <div className="form-group">
+            <label htmlFor='donationTitle'>Donation Name</label>
             <input 
               type='text' 
-              id='orgName'
-              name='orgName' 
-              value={formData.orgName} 
+              id='donationTitle' 
+              name='donationTitle' 
+              value={formData.donationTitle}
               onChange={handleChange} 
-              placeholder='e.g., Greenfield Neighborhood Org.'
+              placeholder="eg., Mike's Cancer Treatment" 
               required
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='email'>Email Address</label>
+          
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
             <input 
               type='email' 
-              id='email'
+              id='email' 
               name='email' 
               value={formData.email} 
               onChange={handleChange} 
-              placeholder='you@organization.com'
-              required 
+              placeholder='eg., user@gmail.com' 
+              required
             />
           </div>
-          <div className='form-group'>
-            <label htmlFor='password'>Password</label>
+
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
             <input 
-              type='password' 
-              id='password'
+              type="password" 
+              id='password' 
               name='password' 
               value={formData.password} 
               onChange={handleChange} 
-              placeholder='••••••••'
-              required 
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='category'>Category</label>
-            <input 
-              type='text' 
-              id='category'
-              name='category' 
-              value={formData.category} 
-              onChange={handleChange} 
-              placeholder='e.g., Community, Education, Sports'
-              required 
+              placeholder='••••••••' 
+              required
             />
           </div>
 
-          <div className='form-group'>
-            <label htmlFor='orgPhoto'>Organization Photo</label>
+          <div className="form-group">
+            <label htmlFor="idPhoto">Upload ID photo</label>
             <input 
               type='file' 
-              id='orgPhoto' 
-              name='orgPhoto' 
+              id='idPhoto' 
+              name='idPhoto' 
               onChange={handleFileChange} 
               accept='image/*' 
+              required
             />
           </div>
 
-          <div className='form-group'>
-            <label htmlFor='paybillNumber'>Mpesa Pabill Number</label>
+          <div className="form-group">
+            <label htmlFor="payBill">Mpesa Paybill Number</label>
             <input 
               type='number' 
-              id='paybillNumber' 
-              name='paybillNumber' 
-              value={formData.paybillNumber}
-              onChange={handleChange}
-              placeholder='eg. 1234' 
+              id='payBill' 
+              name='payBill' 
+              value={formData.payBill} 
+              onChange={handleChange} 
+              placeholder='eg., 1234' 
               required
-            /> 
+            />
           </div>
-
-          <div className='form-group'>
-            <label htmlFor='accountNumber'>Account number</label>
+          
+          <div className="form-group">
+            <label htmlFor="accountNumber">Account Number</label>
             <input 
               type='text' 
               id='accountNumber' 
               name='accountNumber' 
               value={formData.accountNumber} 
-              onChange={handleChange}
-              placeholder='eg., 1234' 
+              onChange={handleChange} 
+              placeholder='eg., AFYA / 1234' 
               required
-            /> 
+            />
           </div>
 
-          <div className='form-group'>
-            <label htmlFor='city'>city</label>
+          <div className="form-group">
+            <label htmlFor="profilePic">Upload your photo</label>
+            <input 
+              type='file' 
+              id='profilePic' 
+              name='profilePic' 
+              onChange={handleFileChange}
+              accept='image/*' 
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="city">City</label>
             <input 
               type='text' 
               id='city' 
               name='city' 
               value={formData.city} 
-              onChange={handleChange}
-              placeholder='eg .,Nairobi' 
-              required
-            /> 
+              onChange={handleChange} 
+              placeholder='eg., Nairobi'
+            />
           </div>
-
-          <div className='form-group'>
-            <label htmlFor='targetAmount'>Target Amount (KSH)</label>
+          
+          <div className="form-group">
+            <label htmlFor="targetAmount">Target Amount (KSH)</label>
             <input 
               type='number' 
               id='targetAmount' 
               name='targetAmount' 
-              value={formData.targetAmount}
-              onChange={handleChange}
-              placeholder='eg., 200000' 
-              required
-            /> 
-          </div>
-           
-          <div className='form-group'>
-            <label htmlFor='duration'>Duration (days)</label>
-            <select 
-              name="duration" 
-              id="duration" 
-              value={formData.duration} 
+              value={formData.targetAmount} 
               onChange={handleChange} 
+              placeholder='eg., 20000' 
               required
-              >
-              <option value="15">15 days</option>
-              <option value="30">30 days</option>
-              <option value="60">60 days</option>
-              <option value="100">100 days</option>
-            </select>  
+            />
           </div>
 
+          <div className="form-group">
+            <label htmlFor="duration">Duration</label>
+            <select 
+              id='duration' 
+              name='duration' 
+              value={formData.duration} 
+              onChange={handleChange}
+              required
+            >
+              <option value='15'>15 days</option>
+              <option value='30'>30 days</option> 
+              <option value='60'>60 days</option>  
+              <option value='100'>100 days</option> 
+            </select> 
+          </div>
+          
           <button type='submit' className='btn btn-primary btn-full-width'>
             Create Account
           </button>
@@ -179,15 +180,17 @@ function OrgRegistration({ navigateTo }) {
 
         <p className='form-footer-text'>
           Already have an account?{' '}
-          <a onClick={() => navigateTo('orgLogin')}>Login</a>
+          <button onClick={() => navigateTo('orgLogin')} className="link-button">
+            Login
+          </button>
         </p>
 
-        <a onClick={() => navigateTo('landing')} className='back-link'>
+        <button onClick={() => navigateTo('landing')} className='back-link'>
           ← Back to Home
-        </a>
+        </button>
       </div>
     </div>
   );
 }
 
-export default OrgRegistration;
+export default UserRegistration;

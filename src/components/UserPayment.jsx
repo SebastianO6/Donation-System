@@ -150,7 +150,7 @@ function UserPayment({ navigateTo }) {
                 </div>
 
                 <div className='form-group'>
-                  <label>Chagua Kiasi (Choose an Amount)</label>
+                  <label>Choose an Amount</label>
                   <div className='amount-presets'>
                     {amountPresets.map(preset => (
                       <button 
@@ -164,7 +164,6 @@ function UserPayment({ navigateTo }) {
                     ))}
                   </div>
                   <div className='custom-amount-wrapper'>
-                    <span>Ksh</span>
                     <input 
                       type='number' 
                       name='amount' 
